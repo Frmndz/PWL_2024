@@ -56,7 +56,7 @@ use App\Http\Controllers\PhotoController;
 //     return 'Nama saya '.$name;
 // });
 
-Route::get('/hello', [WelcomeController::class,'hello']);
+Route::get('/greeting', [WelcomeController::class,'greeting']);
 
 Route::get('/', HomeController::class);
 Route::get('/about', AboutController::class);
@@ -64,3 +64,7 @@ Route::get('/articles/{id}', ArticleController::class);
 
 Route::resource('photo', PhotoController::class)->only(['index','show']);
 Route::resource('photo', PhotoController::class)->except(['create','store','update','destroy']);
+
+// Route::get('/greeting', function () {
+//     return view('blog.hello', ['name' => 'Firman']);
+// });
